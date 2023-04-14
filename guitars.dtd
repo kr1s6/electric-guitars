@@ -1,0 +1,13 @@
+<!ELEMENT guitars (guitar+)>
+<!ELEMENT guitar (name, brand, body, neck?, price, picture)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT brand (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ELEMENT neck (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT picture ANY>
+
+<!ATTLIST guitar category (Squier | Epiphone | Yamaha | Fender | Ibanez) #REQUIRED>
+<!ATTLIST brand from (USA | Japan) "USA">
+<!ATTLIST body frets CDATA "0">
+<!ATTLIST price currency CDATA "PLN">
