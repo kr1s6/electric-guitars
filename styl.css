@@ -1,0 +1,101 @@
+body{
+    display:block;
+    margin: auto;
+    padding: 0px;
+    background-color:#228E94;
+    color:white;
+}
+header{
+    display: block;
+    margin: auto;
+    text-align:center;
+    background-color: #104547;
+}
+header h1{
+    display: block;
+    margin: auto;
+    padding: 10px;
+}
+.gitary{
+    display: flex;
+    margin:5px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.gitary div{
+    display: block;
+    margin: 10px;
+    padding:2px;
+    width: 200px;
+    border:3px solid black;
+}
+img{
+    display: block;
+    margin: auto;
+    width: auto;
+    height: 350px;
+}
+div .dane{
+    display: block;
+    margin: auto;
+    padding: 5px;
+    height: 150px;
+    width: auto;
+}
+.dane p{
+    margin: auto;
+    padding: 2px;
+}
+#name{
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+#brand:before{
+    content: "Brand: ";
+}
+#body:before{
+    content: "Body: ";
+}
+#neck:before{
+    content: "Neck: ";
+}
+#price:before{
+    content: "Price: ";
+}
+#button{
+    display: block;
+    width: 200px;
+    height: 100px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: larger;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: #9E3665;
+    transition-duration: 0.3s;
+}
+#button:hover{
+    background-color: #bd437a;
+}
+.butt{
+    width: 150px;
+    height: 30px;
+    font-size: larger;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: #9E3665;
+    transition-duration: 4ms;
+}
+.butt:hover{
+    background-color: #bd437a;
+}
+.divforbuttons{
+    margin: auto;
+    display: flex;
+    justify-content:center;
+}

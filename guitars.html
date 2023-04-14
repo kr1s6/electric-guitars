@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Giga kox elektryczne gitary</title>
+    <meta charset="UTF-8">
+    <meta name="krzysztof.bielkiewicz" content="krzysztof.bielkiewicz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css"/>
+</head>
+<body>
+    <button id="button" onclick="showALL()">Cała zawartość</button>
+
+<script>
+  function showALL()
+  { 
+    //tworzymy header, main div na wszystkie gitary oraz przyciski-------------------
+      document.getElementById("button").style.display = "none";
+
+      const header = document.createElement("header");
+      const h1 = document.createElement("h1");
+      h1.innerHTML = "Electric Guitars";
+      document.body.appendChild(header);
+      header.appendChild(h1);
+
+
+      const divforbuttons = document.createElement("div");
+      const attt = document.createAttribute("class");
+      attt.value = "divforbuttons";
+      divforbuttons.setAttributeNode(attt);
+      document.body.appendChild(divforbuttons);
+
+      for(let i = 0; i < 5; i++)
+      {
+        const button = document.createElement("button");
+        const att = document.createAttribute("class");
+        att.value = "butt";
+        button.setAttributeNode(att);
+        divforbuttons.appendChild(button);
+      }
+      
+      divforbuttons.children[0].innerText = "Squier";
+      var onclick = document.createAttribute("onclick");
+      onclick.value = "showSquier()";
+      divforbuttons.children[0].setAttributeNode(onclick);
+
+      divforbuttons.children[1].innerText = "Epiphone";
+      var onclick = document.createAttribute("onclick");
+      onclick.value = "showEpiphone()";
+      divforbuttons.children[1].setAttributeNode(onclick);
+
+      divforbuttons.children[2].innerText = "Yamaha";
+      var onclick = document.createAttribute("onclick");
+      onclick.value = "showYamaha()";
+      divforbuttons.children[2].setAttributeNode(onclick);
+
+      divforbuttons.children[3].innerText = "Fender";
+      var onclick = document.createAttribute("onclick");
+      onclick.value = "showFender()";
+      divforbuttons.children[3].setAttributeNode(onclick);
+
+      divforbuttons.children[4].innerText = "Ibanez";
+      var onclick = document.createAttribute("onclick");
+      onclick.value = "showIbanez()";
+      divforbuttons.children[4].setAttributeNode(onclick);
+
+      //Wyszukiwanie
+      const make_input = document.createElement("input");
+      const typ = document.createAttribute("type");
+      const idd = document.createAttribute("id");
+      const ph = document.createAttribute("placeholder");
+      ph.value = "Search";
+      typ.value = "text";
+      idd.value = "fi";
+      make_input.setAttributeNode(typ);
+      make_input.setAttributeNode(ph);
+      make_input.setAttributeNode(idd);
+      divforbuttons.appendChild(make_input);
+
+      document.getElementById("fi").onkeyup = function() {s()};
+
+      const main_div = document.createElement("div");
+          document.body.appendChild(main_div);
+          const att = document.createAttribute("class");
+          att.value = "gitary";
+          main_div.setAttributeNode(att);
+
+    //otwieramy plik xml-------------------------------------------------
+    function getXMLFile(path, callback)
+    {
+      var xml = new XMLHttpRequest();
+      xml.open("GET", path);
+      xml.setRequestHeader("Content_Type", "text/xml");
+      xml.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200){
+          callback(xml.responseXML);      
+        }
+      };
+      xml.send();
+    }
+
+    getXMLFile("guitars.xml", function(xml) {
+      console.log(xml);
+
+      //utworzenie div'ów z gitarami
+      const x = xml.getElementsByTagName("guitar");
+      for(let i = 0; i < x.length; i++)
+      {
+        const div = document.createElement("div");
+        const img = document.createElement("img");
+        const dane = document.createElement("div");
+        const att = document.createAttribute("class");
+        att.value = "dane";
+        dane.setAttributeNode(att);
+
+        main_div.appendChild(div);
+        div.appendChild(img);
+        div.appendChild(dane);
+
+        //kolorki
+        let category = x[i].getAttributeNode("category").nodeValue;
+        const style = document.createAttribute("style");
+        const cat = document.createAttribute("id");
+        if(category == "Squier"){
+          style.value = "background-color: #524B10";
+          div.setAttributeNode(style);
+          cat.value = "Squier";
+          div.setAttributeNode(cat);
+        }
+        else if(category == "Epiphone"){
+          style.value = "background-color: #0B4752";
+          div.setAttributeNode(style);
+          cat.value = "Epiphone";
+          div.setAttributeNode(cat);
+        }
+        else if(category == "Yamaha"){
+          style.value = "background-color: #9E3665";
+          div.setAttributeNode(style);
+          cat.value = "Yamaha";
+          div.setAttributeNode(cat);
+        }
+        else if(category == "Fender"){
+          style.value = "background-color: #9E9016";
+          div.setAttributeNode(style);
+          cat.value = "Fender";
+          div.setAttributeNode(cat);
+        }
+        else if(category == "Ibanez"){
+          style.value = "background-color: #268C9E";
+          div.setAttributeNode(style);
+          cat.value = "Ibanez";
+          div.setAttributeNode(cat);
+        }
+        
+        //dane i zdjęcie
+        const src = document.createAttribute("src");
+        let length = x[i].children.length;
+        src.value = x[i].children[length - 1].innerHTML;
+        img.setAttributeNode(src);
+        for(let j = 0; j < length - 1; j++)
+        {
+          const p = document.createElement("p");
+          if(j == 0){
+            const att = document.createAttribute("id");
+            att.value = "name"
+            p.setAttributeNode(att);
+            p.innerText = x[i].children[j].innerHTML;
+          }
+          else{
+            p.innerText = x[i].children[j].nodeName + ": " + x[i].children[j].innerHTML;
+          }
+          dane.appendChild(p);
+        }
+      }
+  });
+
+  }
+  //funkcja wyszukiwania
+  function s()
+        {
+          const input = document.getElementById("fi");
+          var filter = input.value.toUpperCase();
+          let x = document.getElementsByClassName("gitary")[0].children;
+          
+          for(let i = 0; i < x.length; i++)
+          {
+            let a = x[i].getElementsByClassName("dane")[0].children[0];
+            var txtValue = a.textContent || a.innerText;
+            if(txtValue.toUpperCase().indexOf(filter) > -1) {
+              x[i].style.display = "block";
+            } 
+            else {
+              x[i].style.display = "none";
+            }
+          }
+        }
+
+  //filtracja na kategorie (przyciski)
+  function showSquier()
+        {
+          let x = document.getElementsByClassName("gitary")[0].children;
+          for(let i=0; i < x.length; i++)
+          {
+            if(x[i].getAttributeNode("id").nodeValue != "Squier") 
+            {
+                x[i].style.display = "none";
+              }
+          
+            else{
+              x[i].style.display = "block";}
+          }
+        }
+  function showEpiphone()
+        {
+          let x = document.getElementsByClassName("gitary")[0].children;
+          for(let i=0; i < x.length; i++)
+          {
+            if(x[i].getAttributeNode("id").nodeValue != "Epiphone") 
+            {
+                x[i].style.display = "none";
+              }
+          
+            else{
+              x[i].style.display = "block";}
+          }
+        }
+  function showYamaha()
+        {
+          let x = document.getElementsByClassName("gitary")[0].children;
+          for(let i=0; i < x.length; i++)
+          {
+            if(x[i].getAttributeNode("id").nodeValue != "Yamaha") 
+            {
+                x[i].style.display = "none";
+              }
+          
+            else{
+              x[i].style.display = "block";}
+          }
+        }
+  function showFender()
+        {
+          let x = document.getElementsByClassName("gitary")[0].children;
+          for(let i=0; i < x.length; i++)
+          {
+            if(x[i].getAttributeNode("id").nodeValue != "Fender") 
+            {
+                x[i].style.display = "none";
+              }
+          
+            else{
+              x[i].style.display = "block";}
+          }
+        }
+  function showIbanez()
+        {
+          let x = document.getElementsByClassName("gitary")[0].children;
+          console.log(x[0].getElementsByClassName("dane")[0].children[0]);
+          for(let i=0; i < x.length; i++)
+          {
+            if(x[i].getAttributeNode("id").nodeValue != "Ibanez")
+            {
+              x[i].style.display = "none";
+            }
+            else{
+              x[i].style.display = "block";}
+          }
+        }
+
+</script>
+        
+</body>
+</html>

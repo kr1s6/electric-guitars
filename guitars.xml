@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="electric_guitars.xsl"?>
+
+<!DOCTYPE guitars SYSTEM "guitars.dtd">
+
+<guitars>
+    <guitar category="Squier">
+        <name>Squier Bullet Telecaster Brown Sunburst</name>
+        <brand from="USA">Squier</brand>
+        <body frets="21">Klon</body>
+        <price currency="PLN">813,00 zł</price>
+        <picture>https://m.media-amazon.com/images/I/41xeHzKVEYL._AC_SX679_.jpg</picture>
+    </guitar>
+
+    <guitar category="Squier">
+        <name>Squier Affinity Series Stratocaster FMT HSS MN Sienna Sunburst</name>
+        <brand from="USA">Squier</brand>
+        <body frets="21">Topola</body>
+        <price currency="PLN">1199,00 zł</price>
+        <picture>https://guitarcenter.pl/catalog/images/Squier%20Affinity%20Stratocaster%20FMT%20HSS%20MN%20SSB.png?pID=64705</picture>
+    </guitar>
+
+    <guitar category="Epiphone">
+        <name>Epiphone SG Special Satin E1 CHV</name>
+        <brand from="USA">Epiphone</brand>
+        <body frets="22">Topola + mahoniowy fornir</body>
+        <neck>Okume</neck>
+        <price currency="PLN">879,00 zł</price>
+        <picture>https://www.sklepmuzycznydemo.pl/media/products/386f5584c89449701aef9b778a19b3d5/images/thumbnail/large_EPIPHONE-SG-SPECIAL-VE-CH.png?lm=1619620486</picture>
+    </guitar>
+
+    <guitar category="Yamaha">
+        <name>Yamaha Pacifica 012 II DBM</name>
+        <brand from="Japan">Yamaha</brand>
+        <body frets="22">Agathis</body>
+        <price currency="PLN">999,00 zł</price>
+        <picture>https://m.media-amazon.com/images/I/51xI2Huqx0L._AC_SL1293_.jpg</picture>
+    </guitar>
+
+    <guitar category="Fender">
+        <name>Fender Kenny Wayne Shepherd Stratocaster RW TFSB MHC</name>
+        <brand from="USA">Fender</brand>
+        <body frets="21">Jesion</body>
+        <neck>Klon</neck>
+        <price currency="PLN">11999,00 zł</price>
+        <picture>https://guitarcenter.pl/catalog/images/68873_9207.png?pID=68873</picture>
+    </guitar>
+
+    <guitar category="Ibanez">
+        <name>Ibanez AM53 SRF</name>
+        <brand from="Japan">Ibanez</brand>
+        <body frets="22">Sapele</body>
+        <neck>Mahoń</neck>
+        <price currency="PLN">1395,00 zł</price>
+        <picture>https://guitarcenter.pl/catalog/images/Ibanez%20AM53%20SRF.png?pID=40334</picture>
+    </guitar>
+
+    <guitar category="Ibanez">
+        <name>Ibanez GSA60 WNF</name>
+        <brand from="Japan">Ibanez</brand>
+        <body frets="22">Mahoń</body>
+        <price currency="PLN">1099,00 zł</price>
+        <picture>https://guitarcenter.pl/catalog/images/Ibanez%20GSA60%20WNF.jpg?pID=32483</picture>
+    </guitar>
+
+    <guitar category="Yamaha">
+        <name>Yamaha Pacifica 112V SB</name>
+        <brand from="Japan">Yamaha</brand>
+        <body frets="22">Olcha</body>
+        <neck>Klon</neck>
+        <price currency="PLN">1399,00</price>
+        <picture>https://guitarcenter.pl/catalog/images/Yamaha-Pacifica-112V-SOB.jpg?pID=24679</picture>
+    </guitar>
+
+    <guitar category="Epiphone">
+        <name>Epiphone SG Standard 61 Maestro Vibr VC</name>
+        <brand from="USA">Epiphone</brand>
+        <body frets="22">Mahoń</body>
+        <price currency="PLN">2799,00 zł</price>
+        <picture>https://yourmusiconline.it/uploads/products/images/6/6c3a8b7913c2a7aa74ba7d98679c8bef8f79f882_l.jpg</picture>
+    </guitar>
+
+    <guitar category="Fender">
+        <name>American Vintage II 1977 Telecaster Custom MN WINE</name>
+        <brand from="USA">Fender</brand>
+        <body frets="21">Olcha</body>
+        <price currency="PLN">10799,00 zł</price>
+        <picture>https://guitarcenter.pl/catalog/images/68407_3445.png?pID=68407</picture>
+    </guitar>
+
+
+</guitars>
