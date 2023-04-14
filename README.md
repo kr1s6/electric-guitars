@@ -1,5 +1,7 @@
 # electric-guitars.github.io
-Body of HTML page made with JavaScript    XML/XPath/XSLT/DTD/JavaScript/css/html
+Body of HTML page made with JavaScript    
+
+XML/XPath/XSLT/DTD/JavaScript/css/html
 
 
 Create an original set of XML files with the following requirements:
